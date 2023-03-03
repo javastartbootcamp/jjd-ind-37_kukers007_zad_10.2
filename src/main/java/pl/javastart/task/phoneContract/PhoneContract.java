@@ -1,23 +1,21 @@
 package pl.javastart.task.phoneContract;
 
-public class PhoneContract implements UsingPhone{
-    @Override
-    public void call(int seconds) {
+public abstract class PhoneContract {
+    int smsSent;
+    int mmsSent;
+    double callSecond;
 
-    }
+    public abstract void call(int seconds);
 
-    @Override
-    public int sendSms() {
-        return 0;
-    }
+    public abstract void sendSms();
 
-    @Override
-    public int sendMms() {
-        return 0;
-    }
+    public abstract void sendMms();
 
-    @Override
     public void printAccountState() {
+        System.out.println("===Account Balance===");
+        System.out.printf("SMS sent: %d \n", smsSent);
+        System.out.printf("MMS sent: %d \n", mmsSent);
+        System.out.printf("You have called for: %.1f seconds \n", callSecond);
 
     }
 }
