@@ -16,6 +16,5 @@ public abstract class PhoneContract {
         System.out.printf("SMS sent: %d \n", smsSent);
         System.out.printf("MMS sent: %d \n", mmsSent);
         System.out.printf("You have called for: %.1f seconds \n", callSecond);
-
     }
 }
