@@ -54,8 +54,8 @@ public class Mix extends Prepaid {
     @Override
     public void printAccountState() {
         super.printAccountState();
-        System.out.printf("SMS left: %d\n", mmsPackage);
-        System.out.printf("MMS left: %d\n", mmsPackage);
+        System.out.printf("SMS Package: %d\n", mmsPackage);
+        System.out.printf("MMS Package: %d\n", mmsPackage);
         System.out.printf("Free minutes package: %.2f\n", freeMinutesPackage);
 
     }

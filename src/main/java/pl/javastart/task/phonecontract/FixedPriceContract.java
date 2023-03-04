@@ -2,10 +2,10 @@ package pl.javastart.task.phonecontract;
 
 public class FixedPriceContract extends PhoneContract {
 
-    double fixedPrice;
+    double accountBalance;
 
-    public FixedPriceContract(double fixedPrice) {
-        this.fixedPrice = fixedPrice;
+    public FixedPriceContract(double accountBalance) {
+        this.accountBalance = accountBalance;
     }
 
     @Override
@@ -28,6 +28,6 @@ public class FixedPriceContract extends PhoneContract {
     @Override
     public void printAccountState() {
         super.printAccountState();
-        System.out.printf("Account Balance: %.2f\n", fixedPrice);
+        System.out.printf("Account Balance: %.2f\n", accountBalance);
     }
 }
