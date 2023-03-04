@@ -32,13 +32,19 @@ public class Mix extends Prepaid {
     public void call(int seconds) {
         int freeCallSeconds = freeCallMinutes * 60;
         callSecond = seconds;
-        double secondsLeft = freeCallSeconds - seconds;
-            if (secondsLeft >= 0) {
-                freeCallMinutes -= (seconds / 60);
-            } else if (freeCallSeconds - seconds < 0) {
+
+        while (freeCallSeconds >= 0) {
+            freeCallSeconds--;
+            seconds--;
+            if (seconds == 0) {
+                break;
+            }
+            if (freeCallSeconds == 0) {
                 super.call(seconds);
             }
         }
+        freeCallMinutes = freeCallSeconds / 60;
+    }
 
     @Override
     public void sendMms() {
