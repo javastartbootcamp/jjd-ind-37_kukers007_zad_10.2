@@ -1,6 +1,6 @@
-package Phone;
+package phone;
 
-import pl.javastart.task.phoneContract.PhoneContract;
+import pl.javastart.task.phonecontract.PhoneContract;
 
 public class Phone {
 

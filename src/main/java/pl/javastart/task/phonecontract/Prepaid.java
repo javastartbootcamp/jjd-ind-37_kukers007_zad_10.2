@@ -1,4 +1,4 @@
-package pl.javastart.task.phoneContract;
+package pl.javastart.task.phonecontract;
 
 public class Prepaid extends PhoneContract {
 
@@ -12,9 +12,6 @@ public class Prepaid extends PhoneContract {
         this.smsPrice = smsPrice;
         this.mmsPrice = mmsPrice;
         this.costOneMinuteCall = costOneMinuteCall;
-    }
-
-    public Prepaid() {
     }
 
     @Override
@@ -31,19 +28,15 @@ public class Prepaid extends PhoneContract {
     @Override
     public void call(int seconds) {
         double oneSecondCallCost = costOneMinuteCall / 60;
-        callSecond = seconds;
         int callDuration = 0;
-        while (accountBalance > 0) {
+        while (accountBalance > 0 && seconds > 0) {
             accountBalance -= oneSecondCallCost;
+            seconds--;
             callDuration++;
-            if (accountBalance <= 0) {
-                System.out.println("!!!Call ended!!!");
-                callSecond = seconds - callDuration;
-                break;
-            }
-            if (callDuration == seconds) {
-                break;
-            }
+        }
+        callSecond += callDuration;
+        if (seconds > 0) {
+            System.out.println("!!!Call ended!!!");
         }
     }
 

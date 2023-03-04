@@ -1,9 +1,8 @@
-package pl.javastart.task.phoneContract;
+package pl.javastart.task.phonecontract;
 
 public class FixedPriceContract extends PhoneContract {
 
     double fixedPrice;
-
 
     public FixedPriceContract(double fixedPrice) {
         this.fixedPrice = fixedPrice;

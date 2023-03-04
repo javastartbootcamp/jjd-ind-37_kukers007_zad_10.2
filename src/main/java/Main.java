@@ -1,17 +1,21 @@
-import Phone.Phone;
-import pl.javastart.task.phoneContract.FixedPriceContract;
-import pl.javastart.task.phoneContract.Mix;
+import phone.Phone;
 
+import pl.javastart.task.phonecontract.Mix;
+import pl.javastart.task.phonecontract.Prepaid;
 
 public class Main {
 
     public static void main(String[] args) {
-        Phone phone = new Phone(new FixedPriceContract(23));
-        phone.call(60);
-        phone.printAccountState();
+        Phone phone = new Phone(new Mix(5, 1, 1, 1, 2, 2, 2));
 
         phone.call(60);
+
         phone.sendSms();
+
+        phone.printAccountState();
+
+        phone.call(60);
+
         phone.printAccountState();
 
         phone.call(60);
@@ -22,7 +26,7 @@ public class Main {
 
         phone.printAccountState();
 
-        phone.call(90);
+        phone.call(70);
 
         phone.printAccountState();
     }

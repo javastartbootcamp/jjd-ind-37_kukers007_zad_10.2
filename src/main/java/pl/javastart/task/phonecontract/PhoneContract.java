@@ -1,4 +1,4 @@
-package pl.javastart.task.phoneContract;
+package pl.javastart.task.phonecontract;
 
 public abstract class PhoneContract {
     int smsSent;
